@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Arya Y P — Software Engineer · ML · Networking</title>
+    <meta name="author" content="Arya Y P">
+    <meta name="description"
+        content="Building real-time systems & AI pipelines — from decentralized P2P video at Samsung to hackathon-winning anomaly detection.">
+    <meta name="keywords"
+        content="Arya Y P,portfolio,software engineer,machine learning,WebRTC,full stack developer,BMSCE">
+    <meta property="og:title" content="Arya Y P — Portfolio">
+    <meta property="og:type" content="website">
+    <meta property="og:description"
+        content="Building real-time systems & AI pipelines — from decentralized P2P video at Samsung to hackathon-winning anomaly detection.">
+    <style>
+        :root {
+            --bg: #0b1020;
+            --panel: #121a30;
+            --line: #24304f;
+            --text: #e8ecf6;
+            --mute: #9aa6c4;
+            --acc: #5eead4;
+            --acc2: #818cf8
+        }
+
+        @media (prefers-color-scheme:light) {
+            :root:not([data-theme=dark]) {
+                --bg: #f6f8fc;
+                --panel: #fff;
+                --line: #dbe2f0;
+                --text: #12182b;
+                --mute: #586383;
+                --acc: #0f766e;
+                --acc2: #4f46e5
+            }
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 70px
+        }
+
+        body {
+            margin: 0;
+            background: var(--bg);
+            color: var(--text);
+            font: 16px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none
+        }
+
+        .wrap {
+            max-width: 1080px;
+            margin: 0 auto;
+            padding: 0 20px
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 5;
+            background: color-mix(in srgb, var(--bg) 88%, transparent);
+            backdrop-filter: blur(8px);
+            border-bottom: 1px solid var(--line)
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 22px;
+            height: 58px
+        }
+
+        .logo {
+            font-weight: 800;
+            font-size: 1.2rem
+        }
+
+        .logo span {
+            color: var(--acc)
+        }
+
+        nav ul {
+            display: flex;
+            gap: 20px;
+            list-style: none;
+            margin: 0 0 0 auto;
+            padding: 0;
+            color: var(--mute);
+            font-size: .95rem
+        }
+
+        nav ul a:hover {
+            color: var(--text)
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 9px 18px;
+            border-radius: 999px;
+            border: 1px solid var(--line);
+            font-weight: 600;
+            font-size: .95rem;
+            cursor: pointer;
+            background: none;
+            color: var(--text);
+            font-family: inherit
+        }
+
+        .btn.p {
+            background: var(--acc);
+            color: #04201c;
+            border-color: var(--acc)
+        }
+
+        .btn:hover {
+            border-color: var(--acc)
+        }
+
+        section {
+            padding: 72px 0
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin: .2em 0 .3em
+        }
+
+        .tag {
+            color: var(--acc);
+            font-weight: 600;
+            font-size: .9rem
+        }
+
+        .lead {
+            color: var(--mute);
+            max-width: 60ch
+        }
+
+        .hero {
+            padding: 96px 0 72px
+        }
+
+        .hero h1 {
+            font-size: clamp(2.2rem, 6vw, 3.8rem);
+            line-height: 1.1;
+            margin: .3em 0
+        }
+
+        .status {
+            display: inline-flex;
+            gap: 8px;
+            align-items: center;
+            color: var(--mute);
+            font-size: .9rem
+        }
+
+        .status i {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #34d399
+        }
+
+        .roles {
+            color: var(--acc2);
+            font-weight: 600;
+            margin: 0 0 12px
+        }
+
+        .cta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 24px
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 12px;
+            margin-top: 28px
+        }
+
+        .card {
+            background: var(--panel);
+            border: 1px solid var(--line);
+            border-radius: 14px;
+            padding: 18px
+        }
+
+        .stat b {
+            display: block;
+            font-size: 1.6rem;
+            color: var(--acc)
+        }
+
+        .stat span {
+            color: var(--mute);
+            font-size: .88rem
+        }
+
+        .skills {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 14px;
+            margin-top: 24px
+        }
+
+        .skills h3,
+        .job h3,
+        .proj h3 {
+            margin: 0 0 8px;
+            font-size: 1.05rem
+        }
+
+        .chips {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin: 0;
+            padding: 0;
+            list-style: none
+        }
+
+        .chips li {
+            font-size: .8rem;
+            padding: 3px 10px;
+            border-radius: 999px;
+            border: 1px solid var(--line);
+            color: var(--mute)
+        }
+
+        .filters {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin: 22px 0
+        }
+
+        .filters button[aria-pressed=true] {
+            background: var(--acc);
+            color: #04201c;
+            border-color: var(--acc)
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 14px
+        }
+
+        .proj {
+            display: flex;
+            flex-direction: column;
+            gap: 10px
+        }
+
+        .proj[hidden] {
+            display: none
+        }
+
+        .proj.f {
+            border-color: var(--acc2)
+        }
+
+        .meta {
+            font-size: .78rem;
+            color: var(--acc)
+        }
+
+        .proj p {
+            margin: 0;
+            color: var(--mute);
+            font-size: .93rem;
+            flex: 1
+        }
+
+        .proj .lnk {
+            font-weight: 600;
+            font-size: .9rem
+        }
+
+        .proj .lnk:hover {
+            color: var(--acc)
+        }
+
+        .timeline {
+            display: grid;
+            gap: 14px;
+            margin-top: 24px
+        }
+
+        .job small {
+            color: var(--acc);
+            font-weight: 600
+        }
+
+        .job .org {
+            color: var(--mute);
+            margin: 0 0 8px
+        }
+
+        .job ul {
+            margin: 0 0 10px;
+            padding-left: 18px;
+            color: var(--mute);
+            font-size: .94rem
+        }
+
+        form {
+            display: grid;
+            gap: 12px;
+            max-width: 520px;
+            margin-top: 24px
+        }
+
+        label {
+            display: grid;
+            gap: 4px;
+            font-size: .88rem;
+            color: var(--mute)
+        }
+
+        input,
+        textarea {
+            font: inherit;
+            padding: 10px 12px;
+            border-radius: 10px;
+            border: 1px solid var(--line);
+            background: var(--panel);
+            color: var(--text)
+        }
+
+        :focus-visible {
+            outline: 2px solid var(--acc);
+            outline-offset: 2px
+        }
+
+        .links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 20px 0
+        }
+
+        footer {
+            border-top: 1px solid var(--line);
+            padding: 24px 0;
+            color: var(--mute);
+            font-size: .88rem
+        }
+
+        @media(max-width:640px) {
+            nav ul {
+                display: none
+            }
+        }
+
+        @media(prefers-reduced-motion:reduce) {
+            html {
+                scroll-behavior: auto
+            }
+        }
+    </style>
+</head>
+
+<body id="top">
+    <header>
+        <div class="wrap">
+            <nav>
+                <a class="logo" href="#top">Arya<span>.</span></a>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <a class="btn p" href="#contact">Let's talk</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="wrap">
+                <span class="status"><i></i> Available for opportunities · Bengaluru, IN</span>
+                <h1>Hi, I'm Arya Y P</h1>
+                <p class="roles">Information Science Engineer · Full-Stack Developer · Machine Learning Engineer ·
+                    Real-Time Systems Builder</p>
+                <p class="lead">Building real-time systems &amp; AI pipelines — from decentralized P2P video at Samsung
+                    to hackathon-winning anomaly detection.</p>
+                <div class="cta">
+                    <a class="btn p" href="#projects">View my work</a>
+                    <a class="btn" href="#contact">Get in touch</a>
+                    <a class="btn" href="https://github.com/Arya-126">GitHub</a>
+                    <a class="btn" href="https://arya-portfolio-4h8a.onrender.com/Arya-YP-Resume.pdf">Resume</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="about">
+            <div class="wrap">
+                <span class="tag">About</span>
+                <h2>Who I am</h2>
+                <p class="lead">A systems-minded engineer working across the full stack, machine learning, and real-time
+                    networking.</p>
+                <p class="lead">I'm an Information Science Engineering student at BMS College of Engineering (CGPA 9.73)
+                    who loves turning hard systems problems into shipped products.</p>
+                <p class="lead">My work spans three worlds: full-stack web apps, applied machine learning &amp; deep
+                    learning, and low-level real-time networking. At Samsung PRISM I'm building decentralized
+                    peer-to-peer audiovisual conferencing — diving deep into WebRTC internals, NAT traversal, and
+                    distributed systems.</p>
+                <p class="lead">Whether it's a 195/200 anomaly-detection model that won a global hackathon or an
+                    e-commerce platform, I care about systems that are fast, reliable, and genuinely useful.</p>
+                <div class="stats">
+                    <div class="card stat"><b>9.73</b><span>CGPA @ BMSCE</span></div>
+                    <div class="card stat"><b>15+</b><span>Projects shipped</span></div>
+                    <div class="card stat"><b>Winner</b><span>HyperAPI Hackathon</span></div>
+                    <div class="card stat"><b>Web · ML · Networking</b><span>Domains</span></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills">
+            <div class="wrap">
+                <span class="tag">Skills</span>
+                <h2>My toolkit</h2>
+                <p class="lead">Spanning web development, machine learning, and the low-level networking that ties
+                    real-time systems together.</p>
+                <div class="skills" id="skillgrid"></div>
+            </div>
+        </section>
+
+        <section id="projects">
+            <div class="wrap">
+                <span class="tag">Projects</span>
+                <h2>Things I've built</h2>
+                <p class="lead">From decentralized video and ML pipelines to full-stack web apps. Filter by what you
+                    care about.</p>
+                <div class="filters" id="filters" role="group" aria-label="Filter projects"></div>
+                <div class="grid" id="projgrid"></div>
+            </div>
+        </section>
+
+        <section id="experience">
+            <div class="wrap">
+                <span class="tag">Journey</span>
+                <h2>Experience &amp; milestones</h2>
+                <p class="lead">Where I've worked, won, and learned.</p>
+                <div class="timeline">
+                    <article class="card job"><small>Present</small>
+                        <h3>Project Intern — Samsung PRISM</h3>
+                        <p class="org">Samsung R&amp;D Institute</p>
+                        <ul>
+                            <li>Building decentralized peer-to-peer audiovisual conferencing without a central media
+                                server.</li>
+                            <li>Working deep in WebRTC internals, NAT traversal protocols, and distributed systems
+                                design.</li>
+                        </ul>
+                        <ul class="chips">
+                            <li>WebRTC</li>
+                            <li>P2P</li>
+                            <li>Distributed Systems</li>
+                        </ul>
+                    </article>
+                    <article class="card job"><small>Achievement</small>
+                        <h3>Winner — HyperAPI Global Hackathon</h3>
+                        <p class="org">Global Hackathon</p>
+                        <ul>
+                            <li>Won the global hackathon with an anomaly-detection model scoring 195/200.</li>
+                            <li>Designed an ML pipeline to detect abnormal behaviour in real time.</li>
+                        </ul>
+                        <ul class="chips">
+                            <li>Machine Learning</li>
+                            <li>Anomaly Detection</li>
+                        </ul>
+                    </article>
+                    <article class="card job"><small>CGPA 9.73</small>
+                        <h3>B.E. Information Science &amp; Engineering</h3>
+                        <p class="org">BMS College of Engineering, Bengaluru</p>
+                        <ul>
+                            <li>Information Science Engineering with a strong focus on systems, ML, and full-stack
+                                development.</li>
+                            <li>Consistently top-tier academic performance alongside hands-on building.</li>
+                        </ul>
+                        <ul class="chips">
+                            <li>ISE</li>
+                            <li>Academics</li>
+                        </ul>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <div class="wrap">
+                <span class="tag">Contact</span>
+                <h2>Let's build something</h2>
+                <p class="lead">Have a role, a project, or just want to talk systems and ML? My inbox is open.</p>
+                <div class="links">
+                    <a class="btn" href="mailto:arya1262023@gmail.com">Email · arya1262023@gmail.com</a>
+                    <a class="btn" href="https://github.com/Arya-126">GitHub · @Arya-126</a>
+                </div>
+                <p class="lead">Location: Bengaluru, Karnataka, India</p>
+                <form id="cf">
+                    <label>Name<input name="name" required autocomplete="name"></label>
+                    <label>Email<input name="email" type="email" required autocomplete="email"></label>
+                    <label>Message<textarea name="message" rows="5" required></textarea></label>
+                    <button class="btn p" type="submit">Send message</button>
+                    <small class="lead">Opens your email client addressed to arya1262023@gmail.com.</small>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="wrap">© 2026 Arya Y P.</div>
+    </footer>
+
+    <script>
+        const skills = {
+            "Languages": ["C", "C++", "Python", "JavaScript", "TypeScript"],
+            "Web Development": ["React", "Node.js", "Express", "Vite", "Tailwind CSS", "FastAPI", "Socket.io", "Prisma", "REST APIs"],
+            "Machine Learning & AI": ["NLP", "ANN", "CNN", "TensorFlow", "Scikit-learn", "OpenCV", "HuggingFace Transformers", "RAG / LangGraph", "Model Evaluation"],
+            "Databases": ["MySQL", "MongoDB", "PostgreSQL", "Supabase", "Redis", "Qdrant"],
+            "Networking & Systems": ["Wi-Fi Direct P2P", "STUN / TURN / ICE", "NAT Traversal", "H.264 Encoding", "Docker"],
+            "DSA & Problem-Solving": ["Arrays", "Strings", "Linked Lists", "Trees", "Graphs", "Dynamic Programming"]
+        };
+        const G = "https://github.com/Arya-126/";
+        const P = [
+            ["Machine Learning", "AI-Driven Energy Supply Chain Resilience", "Resilience Grid", "Operational intelligence platform for India's strategic import corridors — synthesizes GDELT geopolitical events, OFAC sanctions, AIS vessel tracking, and commodity feeds into composite corridor risk scores refreshed every 10 minutes. Includes a geospatial digital twin and a PuLP LP-based SPR-drawdown optimizer with Monte Carlo p10/p50/p90 uncertainty bands.", ["Python", "FastAPI", "Pydantic", "PuLP", "Gemini AI", "React", "TypeScript", "Vite", "Tailwind CSS", "Recharts", "Leaflet", "WebSockets"], "https://github.com/Assassin29092005/ET---AI", 1],
+            ["Machine Learning", "Bilingual FIR Database Assistant", "KSP Crime Intelligence", "Deployed bilingual (English/Kannada) NL-to-SQL assistant over a 30-table normalized Karnataka State Police FIR schema. Role-based access control enforced at the SQL layer, criminal-network visualization, 30-day predictive forecasting, geospatial hotspot mapping, and full audit logging with server-side PDF export.", ["Python", "FastAPI", "SQLite", "Anthropic Claude", "QuickML", "JavaScript", "Tailwind CSS", "Leaflet", "vis-network", "Chart.js", "Zoho Catalyst"], G + "datathon", 1],
+            ["Web Development", "Multi-Currency Resell Marketplace with Multi-Agent RAG Assistant", "Esell", "Full-stack resell marketplace with multi-currency live-FX pricing, locked-rate Stripe checkout, real-time chat, and offer negotiation. Ships a multi-agent RAG assistant (LangGraph + Qdrant + Gemini) with query routing, a Self-RAG self-correcting retrieval loop, and guardrails for grounded product Q&A.", ["Node.js", "Express", "Socket.io", "Stripe", "Python", "FastAPI", "LangGraph", "Qdrant", "Google Gemini API", "Docker", "Render"], "https://rewear-4z56.onrender.com", 1],
+            ["Networking", "Decentralized Audiovisual Conferencing", "Samsung PRISM — P2P Conferencing", "Node.js/Express + Socket.io signaling server for a decentralized calling app, with an Android client using Wi-Fi Direct P2P networking, hardware-accelerated H.264 encoding, multi-stream MCU mixing, and STUN/TURN/ICE NAT traversal with fault-tolerant host-failover.", ["Node.js", "Express", "Socket.io", "WebRTC", "Kotlin", "Wi-Fi Direct", "H.264", "STUN/TURN/ICE"], "https://github.com/SuchitKS/prism-server", 0],
+            ["Web Development", "Movie Discovery App", "Filmbox", "A sleek movie discovery and catalogue experience built with TypeScript for browsing and exploring films.", ["TypeScript", "React", "API"], G + "Filmbox", 0],
+            ["Web Development", "Mock Interview Toolkit", "mockbox", "A web platform for practising and structuring mock interviews and prep workflows.", ["JavaScript", "Web"], G + "mockbox", 0],
+            ["Web Development", "Gamified Interview Prep", "gamifiedinterviewprep", "Makes interview preparation engaging with game mechanics, progress tracking, and challenges.", ["TypeScript", "React"], G + "gamifiedinterviewprep", 0],
+            ["Web Development", "ReWear — Sustainable Fashion", "rewear", "A platform encouraging clothing reuse and exchange to cut textile waste.", ["JavaScript", "Web"], G + "rewear", 0],
+            ["Web Development", "TotalSec", "totalsec", "A web application focused on security utilities and tooling.", ["JavaScript", "Web"], G + "totalsec", 0],
+            ["Web Development", "Hospital Booking System", "hospital-booking", "Appointment booking and management system for hospitals and clinics.", ["JavaScript", "Web"], G + "hospital-booking", 0],
+            ["Machine Learning", "Gesture Recognition", "Gesture", "Computer-vision project recognising hand gestures from a live camera feed.", ["Python", "OpenCV", "Computer Vision"], G + "Gesture", 0],
+            ["Machine Learning", "Natural Language Processing", "NLP", "Notebooks exploring core NLP techniques — text processing, embeddings, and language models.", ["Python", "NLP", "Jupyter"], G + "NLP", 0],
+            ["Machine Learning", "Recurrent Neural Networks", "simpleRnn", "Hands-on RNN / sequence-modelling experiments for time-series and text.", ["Python", "RNN", "Deep Learning"], G + "simpleRnn", 0],
+            ["Machine Learning", "Deep Learning Lab", "dl", "A collection of deep-learning experiments and model implementations in Jupyter.", ["Python", "PyTorch/TF", "Deep Learning"], G + "dl", 0],
+            ["Machine Learning", "ML Foundations", "mlbasic", "Foundational machine-learning algorithms implemented and explained from scratch.", ["Python", "ML", "Jupyter"], G + "mlbasic", 0],
+            ["Mobile", "BePresent — Android App", "BePresent", "A native Android attendance / presence application built in Kotlin.", ["Kotlin", "Android"], G + "BePresent", 0]];
+        const esc = s => s.replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+        document.getElementById("skillgrid").innerHTML = Object.entries(skills).map(([k, v]) => `<div class="card"><h3>${esc(k)}</h3><ul class="chips">${v.map(x => `<li>${esc(x)}</li>`).join("")}</ul></div>`).join("");
+        document.getElementById("projgrid").innerHTML = P.map(p => `<article class="card proj${p[6] ? " f" : ""}" data-cat="${p[0]}"><div class="meta">${p[6] ? "Featured · " : ""}${p[0]}</div><h3>${esc(p[2])}</h3><div class="meta" style="color:var(--mute)">${esc(p[1])}</div><p>${esc(p[3])}</p><ul class="chips">${p[4].map(x => `<li>${esc(x)}</li>`).join("")}</ul><a class="lnk" href="${p[5]}" target="_blank" rel="noopener">View project</a></article>`).join("");
+        const cats = ["All", "Web Development", "Machine Learning", "Networking", "Mobile"], fb = document.getElementById("filters");
+        fb.innerHTML = cats.map((c, i) => `<button class="btn" aria-pressed="${i == 0}">${c}</button>`).join("");
+        fb.addEventListener("click", e => {
+            const b = e.target.closest("button"); if (!b) return;
+            fb.querySelectorAll("button").forEach(x => x.setAttribute("aria-pressed", x === b));
+            document.querySelectorAll(".proj").forEach(c => c.hidden = b.textContent !== "All" && c.dataset.cat !== b.textContent)
+        });
+        document.getElementById("cf").addEventListener("submit", e => {
+            e.preventDefault(); const f = new FormData(e.target);
+            location.href = "mailto:arya1262023@gmail.com?subject=" + encodeURIComponent("Portfolio message from " + f.get("name")) + "&body=" + encodeURIComponent(f.get("message") + "\n\n— " + f.get("name") + " (" + f.get("email") + ")")
+        });
+    </script>
+</body>
+
+</html>

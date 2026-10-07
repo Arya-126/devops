@@ -1,0 +1,20 @@
+version: '3.8'
+services:
+  web-service:
+    build: .
+    container_name: web-service
+    networks:
+      - custom-net
+    ports:
+      - "5000:5000"
+
+  client-service:
+    image: alpine
+    container_name: client-service
+    command: sleep 3600
+    networks:
+      - custom-net
+
+networks:
+  custom-net:
+    driver: bridge

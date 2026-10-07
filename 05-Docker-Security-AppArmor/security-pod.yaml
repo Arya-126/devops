@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: secure-flask-pod
+  annotations:
+    container.apparmor.security.beta.kubernetes.io/secure-container: localhost/docker-default-custom
+spec:
+  containers:
+  - name: secure-container
+    image: secure-flask-app:latest
+    imagePullPolicy: Never
+    ports:
+    - containerPort: 5000
